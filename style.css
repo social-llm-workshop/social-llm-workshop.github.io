@@ -8,7 +8,7 @@ body {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   font-size: 1.1rem;
   color: #111;
-  background: #F0F8FF;
+  background: #fff;
   line-height: 1.6;
 }
 
@@ -19,8 +19,8 @@ strong { font-weight: 600; }
 
 /* ---- Navbar ---- */
 .navbar {
-  background: #E6F3FF;
-  border-bottom: 1px solid #B8D9F5;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
   padding: 0.6rem 1.5rem;
   position: sticky;
   top: 0;
@@ -152,6 +152,10 @@ th {
 }
 
 tr:hover { background: #f5faff; }
+
+.past-date td:last-child {
+  text-decoration: line-through;
+}
 
 /* ---- People cards (flex row) ---- */
 .people-row {
@@ -354,6 +358,50 @@ tr:hover { background: #f5faff; }
   font-size: 1rem;
 }
 
+/* ---- Accepted papers ---- */
+.accepted-paper-list {
+  list-style: none;
+  margin: 0.8rem 0 0;
+}
+
+.accepted-paper-list li {
+  display: grid;
+  grid-template-columns: 5.4rem 1fr;
+  gap: 0.65rem;
+  align-items: baseline;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accepted-paper-list li:last-child {
+  border-bottom: none;
+}
+
+.paper-title {
+  color: #111;
+}
+
+.oral-badge,
+.lightning-badge {
+  display: inline-block;
+  padding: 0.05rem 0.45rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.oral-badge {
+  background: #005283;
+}
+
+.lightning-badge {
+  background: #c96b2c;
+}
+
 @media screen and (max-width: 700px) {
   .speaker-entry { flex-direction: column; }
   .speaker-left { flex: none; }
@@ -361,7 +409,7 @@ tr:hover { background: #f5faff; }
 
 /* ---- Footer ---- */
 .footer {
-  background: #B8D9F5;
+  background: #fff;
   color: #111;
   text-align: center;
   padding: 1.5rem;
