@@ -157,6 +157,16 @@ tr:hover { background: #f5faff; }
   text-decoration: line-through;
 }
 
+#schedule table ol {
+  margin: 0.35rem 0 0 1.2rem;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+#schedule table li {
+  margin-bottom: 0.2rem;
+}
+
 /* ---- People cards (flex row) ---- */
 .people-row {
   display: flex;
