@@ -167,6 +167,11 @@ tr:hover { background: #f5faff; }
   margin-bottom: 0.2rem;
 }
 
+#schedule table th:first-child,
+#schedule table td:first-child {
+  white-space: nowrap;
+}
+
 /* ---- People cards (flex row) ---- */
 .people-row {
   display: flex;
