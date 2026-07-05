@@ -3,40 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="SocialLLM Workshop @ ICWSM 2026" />
+    <meta
+      name="description"
+      content="Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026"
+    />
     <meta name="keywords" content="LLM, Social Simulation, Computational Social Science, ICWSM" />
-    <title>SocialLLM @ ICWSM 2026</title>
+    <title>Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a class="navbar-brand" href="#">SocialLLM @ ICWSM 2026</a>
-      <div class="navbar-links">
-        <a href="#overview">Overview</a>
-        <a href="#cfp">Call for Papers</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#speakers">Keynote Speakers</a>
-        <a href="#organizers">Organizers</a>
-        <a href="#accepted-papers">Accepted Papers</a>
-        <a href="#media">Media</a>
-        <a href="#contact">Contact</a>
+    <main class="site-tabs">
+      <div class="tab-list" role="tablist" aria-label="SocialLLM site sections">
+        <button
+          class="tab-button active"
+          type="button"
+          role="tab"
+          id="tab-main"
+          aria-controls="main-panel"
+          aria-selected="true"
+          data-tab-target="main-panel"
+        >
+          Social Agents @ ACL 2026
+        </button>
+        <button
+          class="tab-button"
+          type="button"
+          role="tab"
+          id="tab-workshop"
+          aria-controls="workshop-panel"
+          aria-selected="false"
+          data-tab-target="workshop-panel"
+        >
+          SocialLLM @ ICWSM 2026
+        </button>
       </div>
-    </nav>
 
-    <!-- Hero -->
-    <header class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1>SocialLLM: Large Language Models for Social Reasoning and Simulation</h1>
-        <p class="hero-sub"><strong>ICWSM 2026 Workshop</strong></p>
-        <p class="hero-sub"><strong>Los Angeles, CA, USA &middot; 26 May, 2026 (Half-Day)</strong></p>
-        <p class="hero-sub"><strong>USC Information Sciences Institute &middot; Room 1014</strong></p>
-      </div>
-    </header>
+      <section
+        id="main-panel"
+        class="tab-panel main-image-panel active"
+        role="tabpanel"
+        aria-labelledby="tab-main"
+        tabindex="0"
+      >
+        <h1 class="visually-hidden">Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026</h1>
+        <img
+          class="main-content-image"
+          src="data/images/IMG335.jpg"
+          alt="Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026"
+        />
+      </section>
 
-    <div class="container">
+      <section
+        id="workshop-panel"
+        class="tab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-workshop"
+        tabindex="0"
+      >
+        <!-- Hero -->
+        <header class="hero">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <h1>SocialLLM: Large Language Models for Social Reasoning and Simulation</h1>
+            <p class="hero-sub"><strong>ICWSM 2026 Workshop</strong></p>
+            <p class="hero-sub"><strong>Los Angeles, CA, USA &middot; 26 May, 2026 (Half-Day)</strong></p>
+            <p class="hero-sub"><strong>USC Information Sciences Institute &middot; Room 1014</strong></p>
+          </div>
+        </header>
+
+        <nav class="workshop-nav" aria-label="Workshop section navigation">
+          <a href="#overview">Overview</a>
+          <a href="#cfp">Call for Papers</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#speakers">Keynote Speakers</a>
+          <a href="#organizers">Organizers</a>
+          <a href="#accepted-papers">Accepted Papers</a>
+          <a href="#media">Media</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="container">
 
       <!-- Overview -->
       <section id="overview">
@@ -392,11 +439,89 @@
         </p>
       </section>
 
-    </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2026 SocialLLM @ ICWSM 2026</p>
+      <p>&copy; 2026 Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026</p>
     </footer>
+
+    <script>
+      (function () {
+        var buttons = document.querySelectorAll("[data-tab-target]");
+        var panels = document.querySelectorAll(".tab-panel");
+        var tabLinks = document.querySelectorAll("[data-tab-link]");
+
+        function panelForHash(hash) {
+          if (!hash || hash === "#main") {
+            return "main-panel";
+          }
+          if (hash === "#workshop") {
+            return "workshop-panel";
+          }
+          if (document.querySelector("#workshop-panel " + hash)) {
+            return "workshop-panel";
+          }
+          return "main-panel";
+        }
+
+        function activateTab(panelId, focusPanel) {
+          panels.forEach(function (panel) {
+            panel.classList.toggle("active", panel.id === panelId);
+          });
+
+          buttons.forEach(function (button) {
+            var isActive = button.getAttribute("data-tab-target") === panelId;
+            button.classList.toggle("active", isActive);
+            button.setAttribute("aria-selected", isActive ? "true" : "false");
+          });
+
+          tabLinks.forEach(function (link) {
+            link.classList.toggle("active", link.getAttribute("data-tab-link") === panelId);
+          });
+
+          if (focusPanel) {
+            document.getElementById(panelId).focus({ preventScroll: true });
+          }
+        }
+
+        function syncToHash(scrollToTarget) {
+          var hash = window.location.hash;
+          var panelId = panelForHash(hash);
+          activateTab(panelId, false);
+
+          if (scrollToTarget && hash && hash !== "#main" && hash !== "#workshop") {
+            window.requestAnimationFrame(function () {
+              var target = document.querySelector(hash);
+              if (target) {
+                target.scrollIntoView();
+              }
+            });
+          }
+        }
+
+        buttons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var panelId = button.getAttribute("data-tab-target");
+            activateTab(panelId, true);
+            history.pushState(null, "", panelId === "main-panel" ? "#main" : "#workshop");
+          });
+        });
+
+        tabLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            activateTab(link.getAttribute("data-tab-link"), false);
+          });
+        });
+
+        window.addEventListener("hashchange", function () {
+          syncToHash(true);
+        });
+
+        syncToHash(false);
+      })();
+    </script>
   </body>
 </html>
