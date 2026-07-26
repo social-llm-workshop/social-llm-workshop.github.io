@@ -7,28 +7,90 @@
       name="description"
       content="Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026"
     />
-    <meta name="keywords" content="LLM, Social Simulation, Computational Social Science, ICWSM" />
+    <meta name="keywords" content="LLM, Social Simulation, Computational Social Science, ICWSM, NeurIPS" />
     <title>Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026</title>
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      .tab-list {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        gap: 0.45rem;
+        flex-wrap: wrap;
+        padding: 0.65rem 1rem;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .tab-button {
+        display: inline-block;
+        border: 1px solid #b8d9f5;
+        background: #fff;
+        color: #111;
+        border-radius: 4px;
+        padding: 0.5rem 0.85rem;
+        font: inherit;
+        font-size: 0.98rem;
+        line-height: 1.25;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .tab-button:hover,
+      .tab-button.active {
+        background: #1e5a99;
+        border-color: #1e5a99;
+        color: #fff;
+      }
+      .tab-panel { display: none; }
+      .tab-panel.active { display: block; }
+      .main-image-panel {
+        min-height: calc(100vh - 68px);
+        padding: 2rem 1.5rem;
+        background: #fff;
+      }
+      .main-content-image {
+        display: block;
+        width: min(100%, 1180px);
+        height: auto;
+        max-height: calc(100vh - 112px);
+        object-fit: contain;
+        margin: 0 auto;
+        border-radius: 8px;
+      }
+    </style>
   </head>
 
   <body>
     <main class="site-tabs">
       <div class="tab-list" role="tablist" aria-label="SocialLLM site sections">
-        <button
+        <a
+          href="#neurips-2026"
           class="tab-button active"
-          type="button"
+          role="tab"
+          id="tab-neurips-2026"
+          aria-controls="neurips-2026-panel"
+          aria-selected="true"
+          data-tab-target="neurips-2026-panel"
+        >
+          SocialAgent @ NeurIPS 2026
+        </a>
+        <a
+          href="#main"
+          class="tab-button"
           role="tab"
           id="tab-main"
           aria-controls="main-panel"
-          aria-selected="true"
+          aria-selected="false"
           data-tab-target="main-panel"
         >
           Social Agents @ ACL 2026
-        </button>
-        <button
+        </a>
+        <a
+          href="#workshop"
           class="tab-button"
-          type="button"
           role="tab"
           id="tab-workshop"
           aria-controls="workshop-panel"
@@ -36,17 +98,17 @@
           data-tab-target="workshop-panel"
         >
           SocialLLM @ ICWSM 2026
-        </button>
+        </a>
       </div>
 
       <section
         id="main-panel"
-        class="tab-panel main-image-panel active"
+        class="tab-panel main-image-panel"
         role="tabpanel"
         aria-labelledby="tab-main"
+        aria-label="Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026"
         tabindex="0"
       >
-        <h1 class="visually-hidden">Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026</h1>
         <img
           class="main-content-image"
           src="data/images/IMG335.jpg"
@@ -441,11 +503,143 @@
 
         </div>
       </section>
+
+      <section
+        id="neurips-2026-panel"
+        class="tab-panel neurips-panel active"
+        role="tabpanel"
+        aria-labelledby="tab-neurips-2026"
+        tabindex="0"
+      >
+        <header class="hero neurips-workshop-hero">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <h1>SocialAgent: Second Workshop on Large Language Models for Social Reasoning and Simulation</h1>
+            <p class="hero-sub"><strong>NeurIPS 2026 Workshop</strong></p>
+            <p class="hero-sub"><strong>Atlanta, Georgia, USA &middot; December 12 or 13, 2026 (Exact Date TBA)</strong></p>
+          </div>
+        </header>
+
+        <nav class="workshop-nav" aria-label="NeurIPS workshop section navigation">
+          <a href="#neurips-overview">Overview</a>
+          <a href="#neurips-cfp">Call for Papers</a>
+          <a href="#neurips-schedule">Schedule</a>
+          <a href="#neurips-speakers">Keynote Speakers</a>
+          <a href="#neurips-organizers">Organizers</a>
+          <a href="#neurips-papers">Accepted Papers</a>
+          <a href="#neurips-media">Media</a>
+          <a href="#neurips-contact">Contact</a>
+        </nav>
+
+        <div class="container">
+          <section id="neurips-overview">
+            <h2>Overview</h2>
+            <p>
+              Large language models are increasingly used not only as analytic tools, but as socially situated agents that reason, interact, and generate behavior in simulated environments. This shift enables new forms of research on decision-making, social norms, cooperation, persuasion, and collective dynamics at scale.
+            </p>
+            <p>
+              SocialAgent brings together researchers who build, evaluate, and critically examine LLM-based social agents. The workshop aims to advance a principled, responsible, and empirically grounded research agenda for social reasoning and simulation.
+            </p>
+          </section>
+
+          <section id="neurips-cfp">
+            <h2>Call for Papers</h2>
+            <p>We welcome empirical, methodological, theoretical, and conceptual submissions. Topics include, but are not limited to:</p>
+            <ul>
+              <li><strong>Agent-Based Social Simulation with LLMs:</strong> Coordination, conflict, cooperation, collective action, and information diffusion.</li>
+              <li><strong>Emergence, Norm Formation, and Cultural Evolution:</strong> The development of norms, beliefs, narratives, and collective behavior.</li>
+              <li><strong>Persona Fidelity and Population Heterogeneity:</strong> Psychologically plausible agents, synthetic populations, and demographic variation.</li>
+              <li><strong>Platform and Network Contexts:</strong> Exposure structures, feedback loops, incentives, moderation, and governance.</li>
+              <li><strong>Interventions and Counterfactual Experiments:</strong> Simulations for policy, system design, and stress testing.</li>
+              <li><strong>Grounding, Realism, and Evaluation:</strong> Calibration, reproducibility, privacy, and comparisons with human behavior.</li>
+              <li><strong>Ethical and Societal Implications:</strong> Validity limits, misuse risks, and responsible applications in sensitive domains.</li>
+            </ul>
+
+            <h4>Submission Types and Guidelines</h4>
+            <p class="neurips-coming-soon">Submission formats, review policies, and the submission link will be announced.</p>
+
+            <h4>Important Dates</h4>
+            <table>
+              <tbody>
+                <tr>
+                  <td><strong>Submission Deadline</strong></td>
+                  <td>To be announced</td>
+                </tr>
+                <tr>
+                  <td><strong>Author Notification</strong></td>
+                  <td>To be announced</td>
+                </tr>
+                <tr>
+                  <td><strong>Workshop Date</strong></td>
+                  <td>December 12 or 13, 2026 (exact date TBA)</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="neurips-schedule">
+            <h2>Schedule</h2>
+            <p class="neurips-coming-soon">The workshop schedule will be announced.</p>
+          </section>
+
+          <section id="neurips-speakers">
+            <h2>Keynote Speakers</h2>
+            <p class="neurips-coming-soon">Keynote speakers will be announced.</p>
+          </section>
+
+          <section id="neurips-organizers" class="neurips-organizers">
+            <h2>Organizers</h2>
+            <div class="people-row">
+              <div class="person-card">
+                <img src="data/images/people/xj.jpg" alt="Xiangjue Dong" />
+                <div class="name">Xiangjue Dong</div>
+              </div>
+
+              <div class="person-card">
+                <img src="data/images/people/jiseon_kim.jpg" alt="Jiseon Kim" />
+                <div class="name">Jiseon Kim</div>
+              </div>
+
+              <div class="person-card">
+                <img src="data/images/people/placeholder.svg" alt="Portrait placeholder for Yunah Jang" />
+                <div class="name">Yunah Jang</div>
+              </div>
+
+              <div class="person-card">
+                <img src="data/images/people/placeholder.svg" alt="Portrait placeholder for Tim G. J. Rudner" />
+                <div class="name">Tim G. J. Rudner</div>
+              </div>
+
+              <div class="person-card">
+                <img src="data/images/people/alice_oh.jpg" alt="Alice Oh" />
+                <div class="name">Alice Oh</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="neurips-papers">
+            <h2>Accepted Papers</h2>
+            <p class="neurips-coming-soon">Accepted papers will be posted after the review process.</p>
+          </section>
+
+          <section id="neurips-media">
+            <h2>Media</h2>
+            <p>Join the <a href="https://join.slack.com/t/socialllmworkshop/shared_invite/zt-3pp3essk7-iYqENVKKe8IDajCrjdwXpg">SocialLLM Slack channel</a> for updates and discussions.</p>
+          </section>
+
+          <section id="neurips-contact">
+            <h2>Contact</h2>
+            <p>
+              For questions, contact us through the <a href="https://join.slack.com/t/socialllmworkshop/shared_invite/zt-3pp3essk7-iYqENVKKe8IDajCrjdwXpg">SocialLLM Slack channel</a> or email <a href="mailto:social.llm.workshop@gmail.com">social.llm.workshop@gmail.com</a>.
+            </p>
+          </section>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2026 Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026</p>
+      <p>&copy; 2026 Social Agents Workshop Series</p>
     </footer>
 
     <script>
@@ -455,7 +649,10 @@
         var tabLinks = document.querySelectorAll("[data-tab-link]");
 
         function panelForHash(hash) {
-          if (!hash || hash === "#main") {
+          if (!hash || hash === "#neurips-2026") {
+            return "neurips-2026-panel";
+          }
+          if (hash === "#main") {
             return "main-panel";
           }
           if (hash === "#workshop") {
@@ -464,7 +661,10 @@
           if (document.querySelector("#workshop-panel " + hash)) {
             return "workshop-panel";
           }
-          return "main-panel";
+          if (document.querySelector("#neurips-2026-panel " + hash)) {
+            return "neurips-2026-panel";
+          }
+          return "neurips-2026-panel";
         }
 
         function activateTab(panelId, focusPanel) {
@@ -492,7 +692,13 @@
           var panelId = panelForHash(hash);
           activateTab(panelId, false);
 
-          if (scrollToTarget && hash && hash !== "#main" && hash !== "#workshop") {
+          if (
+            scrollToTarget &&
+            hash &&
+            hash !== "#main" &&
+            hash !== "#workshop" &&
+            hash !== "#neurips-2026"
+          ) {
             window.requestAnimationFrame(function () {
               var target = document.querySelector(hash);
               if (target) {
@@ -506,7 +712,12 @@
           button.addEventListener("click", function () {
             var panelId = button.getAttribute("data-tab-target");
             activateTab(panelId, true);
-            history.pushState(null, "", panelId === "main-panel" ? "#main" : "#workshop");
+            var hashForPanel = {
+              "main-panel": "#main",
+              "workshop-panel": "#workshop",
+              "neurips-2026-panel": "#neurips-2026"
+            };
+            history.pushState(null, "", hashForPanel[panelId] || "#main");
           });
         });
 
