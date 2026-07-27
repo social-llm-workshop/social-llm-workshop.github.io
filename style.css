@@ -97,7 +97,7 @@ strong { font-weight: 600; }
 }
 
 .hero.neurips-workshop-hero {
-  background: linear-gradient(135deg, #17324f, #1e5a99);
+  background: #1a2a3a url('./data/images/atlanta.jpg') center 50% / cover no-repeat;
 }
 
 .neurips-workshop-hero .hero-content {
