@@ -113,6 +113,20 @@ strong { font-weight: 600; }
   font-style: italic;
 }
 
+.neurips-theme-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.neurips-theme-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.neurips-theme-list li:last-child {
+  border-bottom: none;
+}
+
 .neurips-organizers .people-row {
   justify-content: center;
 }
