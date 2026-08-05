@@ -5,7 +5,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: 1.1rem;
   color: #111;
   background: #fff;
@@ -82,14 +82,6 @@ strong { font-weight: 600; }
 
 .hero.neurips-workshop-hero {
   background: #1a2a3a url('./data/images/atlanta.jpg') center 50% / cover no-repeat;
-}
-
-.neurips-workshop-hero .hero-content {
-  max-width: 980px;
-}
-
-.neurips-workshop-hero .hero-content h1 {
-  font-size: clamp(1.8rem, 4vw, 2.7rem);
 }
 
 .neurips-coming-soon {
@@ -538,6 +530,7 @@ tr:hover { background: #f5faff; }
 
 /* ---- 2026 workshop-series refresh ---- */
 :root {
+  --font-serif: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   --ink: #132338;
   --muted: #5d6b7c;
   --paper: #ffffff;
@@ -555,7 +548,7 @@ html {
 body {
   background: var(--canvas);
   color: var(--ink);
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -613,7 +606,7 @@ a:hover {
 .site-brand small {
   margin-top: 0.22rem;
   color: var(--muted);
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: 0.61rem;
   font-weight: 600;
   letter-spacing: 0.035em;
@@ -644,7 +637,7 @@ a:hover {
   background: transparent;
   color: var(--muted);
   padding: 0.5rem 0.65rem;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -682,7 +675,7 @@ a:hover {
 .workshop-nav a {
   padding: 0.45rem 0.65rem;
   color: #465566;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -695,18 +688,28 @@ a:hover {
 }
 
 .hero {
-  min-height: clamp(23rem, 45vh, 29rem);
-  align-items: flex-end;
+  width: 100%;
+  height: clamp(23rem, 25vw, 64rem);
+  min-height: 0;
+  max-height: 70vh;
+  max-height: 70svh;
+  align-items: center;
   justify-content: flex-start;
-  background-position: center 35%;
+  background-position: center 42%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .hero.neurips-workshop-hero {
-  background-position: center 28%;
+  background-position: center 32%;
+}
+
+.hero.icwsm-hero {
+  background-position: center 42%;
 }
 
 .hero.acl-hero {
-  background: #12384d url('./data/images/la-jolla-shores.jpg') center 22% / cover no-repeat;
+  background: #12384d url('./data/images/la-jolla-shores.jpg') center 27% / cover no-repeat;
 }
 
 .hero-overlay {
@@ -724,7 +727,7 @@ a:hover {
 .acl-photo-credit {
   margin: -1.25rem 0 0;
   color: var(--muted);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-serif);
   font-size: 0.7rem;
   line-height: 1.45;
   text-align: right;
@@ -740,19 +743,17 @@ a:hover {
   color: var(--blue-deep);
 }
 
-.hero-content,
-.neurips-workshop-hero .hero-content {
+.hero-content {
   width: 100%;
   max-width: 82rem;
   padding: clamp(2rem, 4vw, 3.25rem) clamp(1.5rem, 8vw, 9rem);
   text-align: left;
 }
 
-.hero-content h1,
-.neurips-workshop-hero .hero-content h1 {
+.hero-content h1 {
   max-width: none;
   margin-bottom: 0.9rem;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.1rem, 3.1vw, 3.35rem);
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -774,7 +775,7 @@ a:hover {
 .eyebrow {
   margin-bottom: 0.75rem;
   color: #f8cb7f;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.075em;
@@ -856,7 +857,7 @@ section h2 {
   margin-bottom: 1.2rem;
   border: 0;
   color: var(--ink);
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.65rem, 3vw, 2.25rem);
   font-weight: 600;
   letter-spacing: -0.04em;
@@ -1061,9 +1062,12 @@ tr:hover { background: #f6fafc; }
   }
 
   .workshop-nav a { flex: 0 0 auto; }
-  .hero { min-height: 21rem; }
-  .hero-content,
-  .neurips-workshop-hero .hero-content { padding: 3rem 1.5rem; }
+  .hero {
+    height: auto;
+    min-height: 21rem;
+    max-height: none;
+  }
+  .hero-content { padding: 3rem 1.5rem; }
   .hero-title-line { white-space: normal; }
   .speaker-entry { padding: 1.2rem; }
   .hero.acl-hero {
@@ -1079,8 +1083,7 @@ tr:hover { background: #f6fafc; }
 }
 
 @media screen and (max-width: 700px) {
-  .hero-content h1,
-  .neurips-workshop-hero .hero-content h1 {
+  .hero-content h1 {
     font-size: clamp(2rem, 10vw, 2.7rem);
   }
 
