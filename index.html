@@ -5,66 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026"
+      content="The Social Agents Workshop Series brings together NeurIPS, ACL, and ICWSM workshops on large language models for social reasoning and simulation."
     />
-    <meta name="keywords" content="LLM, Social Simulation, Computational Social Science, ICWSM, NeurIPS" />
-    <title>Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026</title>
+    <meta name="keywords" content="LLM, Social Simulation, Computational Social Science, NeurIPS, ACL, ICWSM" />
+    <title>Social Agents Workshop Series | NeurIPS, ACL &amp; ICWSM 2026</title>
+    <link rel="canonical" href="https://social-llm-workshop.github.io/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Social Agents Workshop Series" />
+    <meta property="og:title" content="Social Agents Workshop Series" />
+    <meta property="og:description" content="Workshops on large language models for social reasoning and simulation." />
+    <meta property="og:url" content="https://social-llm-workshop.github.io/" />
+    <meta property="og:image" content="https://social-llm-workshop.github.io/data/images/people/xj.jpg" />
+    <meta property="og:image:alt" content="Xiangjue Dong, organizer of the Social Agents Workshop Series" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Social Agents Workshop Series" />
+    <meta name="twitter:description" content="Workshops on large language models for social reasoning and simulation." />
+    <meta name="twitter:image" content="https://social-llm-workshop.github.io/data/images/people/xj.jpg" />
     <link rel="stylesheet" href="./style.css" />
-    <style>
-      * { box-sizing: border-box; }
-      body { margin: 0; }
-      .tab-list {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        display: flex;
-        justify-content: center;
-        gap: 0.45rem;
-        flex-wrap: wrap;
-        padding: 0.65rem 1rem;
-        background: rgba(255, 255, 255, 0.96);
-        border-bottom: 1px solid #e5e5e5;
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://social-llm-workshop.github.io/#website",
+            "url": "https://social-llm-workshop.github.io/",
+            "name": "Social Agents Workshop Series",
+            "description": "Workshops on large language models for social reasoning and simulation."
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://social-llm-workshop.github.io/#organization",
+            "name": "Social Agents Workshop Series",
+            "url": "https://social-llm-workshop.github.io/",
+            "member": {
+              "@id": "https://social-llm-workshop.github.io/#xiangjue-dong"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://social-llm-workshop.github.io/#xiangjue-dong",
+            "name": "Xiangjue Dong",
+            "url": "https://dongxiangjue.github.io/",
+            "image": "https://social-llm-workshop.github.io/data/images/people/xj.jpg",
+            "jobTitle": "Workshop Organizer",
+            "affiliation": {
+              "@type": "Organization",
+              "name": "Texas A&M University"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Microsoft"
+            }
+          },
+          {
+            "@type": "Event",
+            "name": "SocialLLM: Large Language Models for Social Reasoning and Simulation",
+            "url": "https://social-llm-workshop.github.io/#icwsm-2026",
+            "startDate": "2026-05-26",
+            "endDate": "2026-05-26",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@type": "Place",
+              "name": "USC Information Sciences Institute, Room 1014",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+              }
+            },
+            "organizer": {
+              "@id": "https://social-llm-workshop.github.io/#organization"
+            },
+            "image": "https://social-llm-workshop.github.io/data/images/people/xj.jpg"
+          },
+          {
+            "@type": "Event",
+            "name": "Social Agents in the Wild",
+            "description": "An ACL 2026 Birds of a Feather gathering on reasoning, simulation, and evaluation of social agents.",
+            "url": "https://social-llm-workshop.github.io/#acl-2026",
+            "startDate": "2026-07-05T10:30:00",
+            "endDate": "2026-07-05T12:30:00",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@type": "Place",
+              "name": "Gaslamp C–D",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "San Diego",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+              }
+            },
+            "organizer": {
+              "@id": "https://social-llm-workshop.github.io/#organization"
+            },
+            "image": "https://social-llm-workshop.github.io/data/images/BOF.jpg"
+          }
+        ]
       }
-      .tab-button {
-        display: inline-block;
-        border: 1px solid #b8d9f5;
-        background: #fff;
-        color: #111;
-        border-radius: 4px;
-        padding: 0.5rem 0.85rem;
-        font: inherit;
-        font-size: 0.98rem;
-        line-height: 1.25;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      .tab-button:hover,
-      .tab-button.active {
-        background: #1e5a99;
-        border-color: #1e5a99;
-        color: #fff;
-      }
-      .tab-panel { display: none; }
-      .tab-panel.active { display: block; }
-      .main-image-panel {
-        min-height: calc(100vh - 68px);
-        padding: 2rem 1.5rem;
-        background: #fff;
-      }
-      .main-content-image {
-        display: block;
-        width: min(100%, 1180px);
-        height: auto;
-        max-height: calc(100vh - 112px);
-        object-fit: contain;
-        margin: 0 auto;
-        border-radius: 8px;
-      }
-    </style>
+    </script>
   </head>
 
   <body>
-    <main class="site-tabs">
+    <header class="site-header">
+      <a class="site-brand" href="#neurips-2026" aria-label="Social Agents Workshop Series home">
+        <span>
+          <strong>Social Agents Workshop Series</strong>
+        </span>
+      </a>
       <div class="tab-list" role="tablist" aria-label="SocialLLM site sections">
         <a
           href="#neurips-2026"
@@ -78,57 +131,123 @@
           SocialAgent @ NeurIPS 2026
         </a>
         <a
-          href="#main"
+          href="#acl-2026"
           class="tab-button"
           role="tab"
-          id="tab-main"
-          aria-controls="main-panel"
+          id="tab-acl-2026"
+          aria-controls="acl-2026-panel"
           aria-selected="false"
-          data-tab-target="main-panel"
+          data-tab-target="acl-2026-panel"
         >
-          Social Agents @ ACL 2026
+          BOF @ ACL 2026
         </a>
         <a
-          href="#workshop"
+          href="#icwsm-2026"
           class="tab-button"
           role="tab"
-          id="tab-workshop"
-          aria-controls="workshop-panel"
+          id="tab-icwsm-2026"
+          aria-controls="icwsm-2026-panel"
           aria-selected="false"
-          data-tab-target="workshop-panel"
+          data-tab-target="icwsm-2026-panel"
         >
           SocialLLM @ ICWSM 2026
         </a>
       </div>
+    </header>
+
+    <main class="site-tabs">
 
       <section
-        id="main-panel"
-        class="tab-panel main-image-panel"
+        id="acl-2026-panel"
+        class="tab-panel acl-panel"
         role="tabpanel"
-        aria-labelledby="tab-main"
+        aria-labelledby="tab-acl-2026"
         aria-label="Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026"
         tabindex="0"
       >
-        <img
-          class="main-content-image"
-          src="data/images/IMG335.jpg"
-          alt="Social Agents in the Wild: Reasoning, Simulation, Evaluation @ ACL 2026"
-        />
+        <header class="hero acl-hero">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="eyebrow">ACL 2026 · Birds of a Feather</p>
+            <h1>
+              <span class="hero-title-line">Social Agents</span>
+              <span class="hero-title-line">in the Wild</span>
+            </h1>
+            <p class="hero-sub"><strong>Reasoning · Simulation · Evaluation</strong></p>
+            <p class="hero-sub"><strong>San Diego, California · July 5 · 10:30 AM–12:30 PM · Gaslamp C–D</strong></p>
+          </div>
+        </header>
+
+        <nav class="workshop-nav" aria-label="ACL event section navigation">
+          <a href="#acl-overview">Overview</a>
+          <a href="#acl-details">Event Details</a>
+          <a href="#acl-poster">Event Photo</a>
+        </nav>
+
+        <div class="container acl-container">
+          <section id="acl-overview">
+            <h2>Overview</h2>
+            <p class="acl-lead">
+              Join us for coffee, conversation, and lightning talks on social agents in the wild,
+              with a focus on reasoning, simulation, and evaluation.
+            </p>
+          </section>
+
+          <section id="acl-details">
+            <h2>Event Details</h2>
+            <dl class="event-facts">
+              <div>
+                <dt>Date</dt>
+                <dd>July 5, 2026</dd>
+              </div>
+              <div>
+                <dt>Time</dt>
+                <dd>10:30 AM–12:30 PM</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Gaslamp C–D, San Diego, California</dd>
+              </div>
+              <div>
+                <dt>Format</dt>
+                <dd>Coffee, chats, and lightning talks</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section id="acl-poster">
+            <h2>Event Photo</h2>
+            <figure class="acl-poster">
+              <img
+                src="data/images/BOF.jpg"
+                alt="Attendees seated in a conference room during the ACL 2026 Social Agents in the Wild Birds of a Feather session"
+              />
+            </figure>
+          </section>
+          <p class="acl-photo-credit">
+            Hero photo: <a href="https://commons.wikimedia.org/wiki/File:La_Jolla_Shores_view_(cropped).jpg" target="_blank" rel="noopener noreferrer">Dirk Hansen / Wikimedia Commons</a>
+            · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>
+            · displayed with a responsive crop
+          </p>
+        </div>
       </section>
 
       <section
-        id="workshop-panel"
+        id="icwsm-2026-panel"
         class="tab-panel"
         role="tabpanel"
-        aria-labelledby="tab-workshop"
+        aria-labelledby="tab-icwsm-2026"
         tabindex="0"
       >
         <!-- Hero -->
         <header class="hero">
           <div class="hero-overlay"></div>
           <div class="hero-content">
-            <h1>SocialLLM: Large Language Models for Social Reasoning and Simulation</h1>
-            <p class="hero-sub"><strong>ICWSM 2026 Workshop</strong></p>
+            <p class="eyebrow">ICWSM 2026 · Workshop</p>
+            <h1>
+              <span class="hero-title-line">SocialLLM: Large Language Models for</span>
+              <span class="hero-title-line">Social Reasoning and Simulation</span>
+            </h1>
             <p class="hero-sub"><strong>Los Angeles, CA, USA &middot; 26 May, 2026 (Half-Day)</strong></p>
             <p class="hero-sub"><strong>USC Information Sciences Institute &middot; Room 1014</strong></p>
           </div>
@@ -388,20 +507,12 @@
           </div>
 
         </div>
-      </section>
-
-      <!-- Assistance -->
-      <section id="assistance">
-        <h2>Assistance</h2>
-        <div class="people-row">
-
-          <div class="person-card">
-            <a href="https://www.linkedin.com/in/siqizhang7/">
-              <img src="data/images/people/siqi.jpeg" alt="Siqi Zhang" />
-            </a>
+        <div class="support-row">
+          <div class="person-card coordinator-card">
+            <div class="coordinator-role">Technical Support</div>
             <div class="name"><a href="https://www.linkedin.com/in/siqizhang7/">Siqi Zhang</a></div>
+            <div class="affil">Microsoft</div>
           </div>
-
         </div>
       </section>
 
@@ -514,8 +625,11 @@
         <header class="hero neurips-workshop-hero">
           <div class="hero-overlay"></div>
           <div class="hero-content">
-            <h1>SocialAgent: Second Workshop on Large Language Models for Social Reasoning and Simulation</h1>
-            <p class="hero-sub"><strong>NeurIPS 2026 Workshop</strong></p>
+            <p class="eyebrow">NeurIPS 2026 · Workshop</p>
+            <h1>
+              <span class="hero-title-line">SocialAgent: Second Workshop on Large Language</span>
+              <span class="hero-title-line">Models for Social Reasoning and Simulation</span>
+            </h1>
             <p class="hero-sub"><strong>Atlanta, Georgia, USA &middot; December 12 or 13, 2026 (Exact Date TBA)</strong></p>
           </div>
         </header>
@@ -587,7 +701,7 @@
               <tbody>
                 <tr>
                   <td><strong>Submission Deadline</strong></td>
-                  <td>August 29, 2026, AoE</td>
+                  <td>August 25, 2026, AoE</td>
                 </tr>
                 <tr>
                   <td><strong>Author Notification</strong></td>
@@ -624,7 +738,23 @@
 
           <section id="neurips-speakers">
             <h2>Keynote Speakers</h2>
-            <p class="neurips-coming-soon">Keynote speakers will be announced.</p>
+            <div class="people-row keynote-people-row">
+              <div class="person-card">
+                <a href="https://serinachang5.github.io/">
+                  <img src="data/images/people/serina.jpeg" alt="Serina Chang" />
+                </a>
+                <div class="name"><a href="https://serinachang5.github.io/">Serina Chang</a></div>
+                <div class="affil">UC Berkeley</div>
+              </div>
+
+              <div class="person-card">
+                <a href="https://mashhadi.squarespace.com/">
+                  <img src="data/images/people/afra.jpg" alt="Afra Mashhadi" />
+                </a>
+                <div class="name"><a href="https://mashhadi.squarespace.com/">Afra Mashhadi</a></div>
+                <div class="affil">University of Washington</div>
+              </div>
+            </div>
           </section>
 
           <section id="neurips-organizers" class="neurips-organizers">
@@ -669,6 +799,14 @@
                 <div class="name"><a href="https://aliceoh9.github.io/">Alice Oh</a></div>
                 <div class="affil">KAIST</div>
               </div>
+
+            </div>
+            <div class="support-row">
+              <div class="person-card coordinator-card">
+                <div class="coordinator-role">Technical Support</div>
+                <div class="name"><a href="https://www.linkedin.com/in/siqizhang7/">Siqi Zhang</a></div>
+                <div class="affil">Microsoft</div>
+              </div>
             </div>
           </section>
 
@@ -702,19 +840,32 @@
         var buttons = document.querySelectorAll("[data-tab-target]");
         var panels = document.querySelectorAll(".tab-panel");
         var tabLinks = document.querySelectorAll("[data-tab-link]");
+        var siteHeader = document.querySelector(".site-header");
+
+        function updateHeaderHeight() {
+          if (siteHeader) {
+            document.documentElement.style.setProperty(
+              "--site-header-height",
+              siteHeader.offsetHeight + "px"
+            );
+          }
+        }
 
         function panelForHash(hash) {
           if (!hash || hash === "#neurips-2026") {
             return "neurips-2026-panel";
           }
-          if (hash === "#main") {
-            return "main-panel";
+          if (hash === "#acl-2026") {
+            return "acl-2026-panel";
           }
-          if (hash === "#workshop") {
-            return "workshop-panel";
+          if (hash === "#icwsm-2026") {
+            return "icwsm-2026-panel";
           }
-          if (document.querySelector("#workshop-panel " + hash)) {
-            return "workshop-panel";
+          if (document.querySelector("#acl-2026-panel " + hash)) {
+            return "acl-2026-panel";
+          }
+          if (document.querySelector("#icwsm-2026-panel " + hash)) {
+            return "icwsm-2026-panel";
           }
           if (document.querySelector("#neurips-2026-panel " + hash)) {
             return "neurips-2026-panel";
@@ -750,8 +901,8 @@
           if (
             scrollToTarget &&
             hash &&
-            hash !== "#main" &&
-            hash !== "#workshop" &&
+            hash !== "#acl-2026" &&
+            hash !== "#icwsm-2026" &&
             hash !== "#neurips-2026"
           ) {
             window.requestAnimationFrame(function () {
@@ -768,11 +919,11 @@
             var panelId = button.getAttribute("data-tab-target");
             activateTab(panelId, true);
             var hashForPanel = {
-              "main-panel": "#main",
-              "workshop-panel": "#workshop",
+              "acl-2026-panel": "#acl-2026",
+              "icwsm-2026-panel": "#icwsm-2026",
               "neurips-2026-panel": "#neurips-2026"
             };
-            history.pushState(null, "", hashForPanel[panelId] || "#main");
+            history.pushState(null, "", hashForPanel[panelId] || "#neurips-2026");
           });
         });
 
@@ -786,6 +937,12 @@
           syncToHash(true);
         });
 
+        window.addEventListener("resize", updateHeaderHeight);
+        if (window.ResizeObserver && siteHeader) {
+          new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+        }
+
+        updateHeaderHeight();
         syncToHash(false);
       })();
     </script>
