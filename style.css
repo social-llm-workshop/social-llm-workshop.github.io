@@ -1030,6 +1030,31 @@ tr:hover { background: #f6fafc; }
   .hero-title-line { white-space: normal; }
 }
 
+@media screen and (min-width: 761px) and (max-width: 1180px) {
+  .site-header {
+    display: block;
+    padding: 0.45rem 1rem 0.35rem;
+  }
+
+  .site-brand {
+    margin-bottom: 0.3rem;
+    padding: 0.3rem 0;
+  }
+
+  .tab-list {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.12rem;
+  }
+
+  .tab-button {
+    flex: 0 0 auto;
+    padding-block: 0.45rem;
+    font-size: 0.88rem;
+  }
+}
+
 @media screen and (max-width: 760px) {
   .site-header {
     display: block;

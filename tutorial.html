@@ -8,28 +8,40 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
 
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a class="navbar-brand" href="index.html">SocialLLM @ ICWSM 2026</a>
-      <div class="navbar-links">
-        <a href="index.html#overview">Workshop</a>
-        <a href="#overview">Overview</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#reading">Suggested Reading</a>
-      </div>
-    </nav>
+  <body class="tutorial-page">
+    <header class="site-header">
+      <a class="site-brand" href="index.html#neurips-2026" aria-label="Social Agents Workshop Series home">
+        <span>
+          <strong>Social Agents Workshop Series</strong>
+        </span>
+      </a>
+      <nav class="tab-list" aria-label="Social Agents Workshop Series pages">
+        <a href="index.html#neurips-2026" class="tab-button">SocialAgent @ NeurIPS 2026</a>
+        <a href="index.html#acl-2026" class="tab-button">BOF @ ACL 2026</a>
+        <a href="index.html#icwsm-2026" class="tab-button">SocialLLM @ ICWSM 2026</a>
+        <a href="tutorial.html" class="tab-button active" aria-current="page">Tutorial @ ICWSM 2026</a>
+      </nav>
+    </header>
 
     <!-- Hero -->
-    <header class="hero">
+    <header class="hero icwsm-hero tutorial-hero">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1>Tutorial: LLM-based Agentic Simulations for<br> Social Science</h1>
-        <p class="hero-sub"><strong>ICWSM 2026 Tutorial</strong></p>
+        <p class="eyebrow">ICWSM 2026 · Tutorial</p>
+        <h1>
+          <span class="hero-title-line">LLM-based Agentic Simulations for</span>
+          <span class="hero-title-line">Social Science</span>
+        </h1>
         <p class="hero-sub"><strong>Los Angeles, CA, USA &middot; 26 May, 2026</strong></p>
         <p class="hero-sub"><strong>USC Information Sciences Institute &middot; Room 1165</strong></p>
       </div>
     </header>
+
+    <nav class="workshop-nav" aria-label="Tutorial section navigation">
+      <a href="#overview">Overview</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#reading">Suggested Reading</a>
+    </nav>
 
     <div class="container">
 
@@ -37,7 +49,7 @@
       <section id="overview">
         <div class="section-title-row">
           <h2>Overview</h2>
-          <a href="index.html" class="btn-tutorial">&larr; Check Out Our Workshop</a>
+          <a href="index.html#icwsm-2026" class="btn-tutorial">&larr; Check Out Our Workshop</a>
         </div>
         <table>
           <tbody>
@@ -176,7 +188,29 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2026 SocialLLM @ ICWSM 2026 &nbsp;&middot;&nbsp; <a href="index.html" style="color:#1e5a99;">Back to Workshop</a></p>
+      <p>&copy; 2026 SocialLLM @ ICWSM 2026 &nbsp;&middot;&nbsp; <a href="index.html#icwsm-2026" style="color:#1e5a99;">Back to Workshop</a></p>
     </footer>
+
+    <script>
+      (function () {
+        var siteHeader = document.querySelector(".site-header");
+
+        function updateHeaderHeight() {
+          if (siteHeader) {
+            document.documentElement.style.setProperty(
+              "--site-header-height",
+              siteHeader.offsetHeight + "px"
+            );
+          }
+        }
+
+        window.addEventListener("resize", updateHeaderHeight);
+        if (window.ResizeObserver && siteHeader) {
+          new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+        }
+
+        updateHeaderHeight();
+      })();
+    </script>
   </body>
 </html>

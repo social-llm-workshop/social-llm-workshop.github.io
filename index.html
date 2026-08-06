@@ -152,6 +152,9 @@
         >
           SocialLLM @ ICWSM 2026
         </a>
+        <a href="tutorial.html" class="tab-button">
+          Tutorial @ ICWSM 2026
+        </a>
       </div>
     </header>
 
@@ -893,18 +896,25 @@
           }
         }
 
+        function scrollPageToTop() {
+          window.requestAnimationFrame(function () {
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+          });
+        }
+
         function syncToHash(scrollToTarget) {
           var hash = window.location.hash;
           var panelId = panelForHash(hash);
+          var isTopLevelHash =
+            !hash ||
+            hash === "#acl-2026" ||
+            hash === "#icwsm-2026" ||
+            hash === "#neurips-2026";
           activateTab(panelId, false);
 
-          if (
-            scrollToTarget &&
-            hash &&
-            hash !== "#acl-2026" &&
-            hash !== "#icwsm-2026" &&
-            hash !== "#neurips-2026"
-          ) {
+          if (scrollToTarget && isTopLevelHash) {
+            scrollPageToTop();
+          } else if (scrollToTarget && hash) {
             window.requestAnimationFrame(function () {
               var target = document.querySelector(hash);
               if (target) {
@@ -915,7 +925,8 @@
         }
 
         buttons.forEach(function (button) {
-          button.addEventListener("click", function () {
+          button.addEventListener("click", function (event) {
+            event.preventDefault();
             var panelId = button.getAttribute("data-tab-target");
             activateTab(panelId, true);
             var hashForPanel = {
@@ -924,6 +935,7 @@
               "neurips-2026-panel": "#neurips-2026"
             };
             history.pushState(null, "", hashForPanel[panelId] || "#neurips-2026");
+            scrollPageToTop();
           });
         });
 
