@@ -591,6 +591,12 @@ a:hover {
 
 .site-brand:hover { color: var(--ink); }
 
+.site-brand-logo {
+  display: block;
+  width: auto;
+  height: 4rem;
+}
+
 .site-brand strong,
 .site-brand small {
   display: block;
@@ -1041,6 +1047,8 @@ tr:hover { background: #f6fafc; }
     padding: 0.3rem 0;
   }
 
+  .site-brand-logo { height: 3.25rem; }
+
   .tab-list {
     justify-content: flex-start;
     flex-wrap: nowrap;
@@ -1065,6 +1073,8 @@ tr:hover { background: #f6fafc; }
     margin-bottom: 0.3rem;
     padding: 0.3rem 0;
   }
+
+  .site-brand-logo { height: 3rem; }
 
   .tab-list {
     justify-content: flex-start;
